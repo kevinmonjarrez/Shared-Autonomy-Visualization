@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dclmn74mox0s6"
+path="res://.godot/imported/conical_man.obj-54347077c99362cc454da7266a9f3887.mesh"
+
+[deps]
+
+files=["res://.godot/imported/conical_man.obj-54347077c99362cc454da7266a9f3887.mesh"]
+
+source_file="res://conical_man.obj"
+dest_files=["res://.godot/imported/conical_man.obj-54347077c99362cc454da7266a9f3887.mesh", "res://.godot/imported/conical_man.obj-54347077c99362cc454da7266a9f3887.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

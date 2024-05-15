@@ -1,0 +1,48 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqhip3a4yelr1"]
+
+[ext_resource type="Script" path="res://PlayerDot.gd" id="1_wnqc5"]
+[ext_resource type="Texture2D" uid="uid://68j68fr8v3om" path="res://red-color-solid-background-1920x1080.png" id="2_ejamh"]
+[ext_resource type="Script" path="res://Goal Arrow.gd" id="3_46fre"]
+[ext_resource type="Texture2D" uid="uid://bbd2fmen6v3ve" path="res://green-color-solid-background-1920x1080.png" id="4_rgy1u"]
+[ext_resource type="PackedScene" uid="uid://cti750y7yx1d7" path="res://blend_arrow.tscn" id="5_n4gi8"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_nbqg6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxawx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvg17"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1plme"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8ehj"]
+albedo_texture = ExtResource("2_ejamh")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3cpg3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n41f5"]
+albedo_texture = ExtResource("4_rgy1u")
+
+[node name="PlayerDot" type="CharacterBody3D"]
+script = ExtResource("1_wnqc5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_nbqg6")
+surface_material_override/0 = SubResource("StandardMaterial3D_hxawx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bvg17")
+
+[node name="Arrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, -1)
+mesh = SubResource("CapsuleMesh_1plme")
+surface_material_override/0 = SubResource("StandardMaterial3D_k8ehj")
+
+[node name="Goal Arrow" type="CharacterBody3D" parent="."]
+script = ExtResource("3_46fre")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Goal Arrow"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, -1)
+mesh = SubResource("CapsuleMesh_3cpg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_n41f5")
+
+[node name="Blend Arrow" parent="." instance=ExtResource("5_n4gi8")]
